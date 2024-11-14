@@ -9,7 +9,7 @@ spec:
     - name: URL
       type: string
       description: URL of the Git repository use for fetching the tasks
-      default: 'https://github.com/RedHatInsights/bonfire-tekton'
+      default: 'https://github.com/RHEnVision/bonfire-tekton'
     - name: REVISION
       type: string
       description: Git commit revision to use for fetching the tasks
