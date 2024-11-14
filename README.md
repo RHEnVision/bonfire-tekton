@@ -34,7 +34,7 @@ spec:
   resolverRef:
     params:
     - name: url
-      value: https://github.com/RedHatInsights/bonfire-tekton.git
+      value: 'https://github.com/RHEnVision/bonfire-tekton'
     - name: revision
       value: main # Or whatever branch you want to test
     - name: pathInRepo
