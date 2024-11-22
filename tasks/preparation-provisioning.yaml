@@ -80,8 +80,8 @@ spec:
         # TODO: switch to using https://github.com/RedHatInsights/cicd-tools/blob/aea5d464a40d9ada1e03f76ff85cb6c5d0deb7e2/konflux_scripts/login.sh
 
         echo "Login to ephemeral cluster"
-        local server="${OC_LOGIN_SERVER:?OC_LOGIN_SERVER env var was not defined}"
-        local token="${OC_LOGIN_TOKEN:?OC_LOGIN_SERVER env var was not defined}"
+        server="${OC_LOGIN_SERVER:?OC_LOGIN_SERVER env var was not defined}"
+        token="${OC_LOGIN_TOKEN:?OC_LOGIN_SERVER env var was not defined}"
 
         oc login --token="$token" --server="$server"
 
