@@ -89,4 +89,5 @@ spec:
         export AZURE_TENANT_ID
         export AZURE_SUBSCRIPTION_ID
         export AZURE_RESOURCE_GROUP
-        /images_db_stub.sh 
+
+        source /images_db_stub.sh 
