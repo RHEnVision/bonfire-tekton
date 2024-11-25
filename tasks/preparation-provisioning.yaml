@@ -12,6 +12,9 @@ spec:
      type: string
      description: The container image to use for the provisioning setup task
      default: quay.io/envision/provisioning-cicd:latest
+   - name: NS
+     type: string
+     description: Namespace name to deploy the application to
    - name: NS_REQUESTER
      type: string
      description: The name of the person/pipeline that requested the namespace
@@ -84,6 +87,8 @@ spec:
         token="${OC_LOGIN_TOKEN:?OC_LOGIN_SERVER env var was not defined}"
 
         oc login --token="$token" --server="$server"
+
+        oc project "$(params.NS)"
 
         export AWS_ACCOUNT_ID
         export AZURE_TENANT_ID
