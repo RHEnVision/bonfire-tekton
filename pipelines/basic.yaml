@@ -237,6 +237,8 @@ spec:
             value: tasks/deploy.yaml
     - name: custom-preparation
       params:
+        - name: NS
+          value: "$(tasks.reserve-namespace.results.NS)"
         - name: NS_REQUESTER
           value: "$(context.pipelineRun.name)"
         - name: EPHEMERAL_ENV_PROVIDER_SECRET
