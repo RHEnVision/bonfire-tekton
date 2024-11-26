@@ -4,40 +4,40 @@ metadata:
   name: preparation-provisioning
 spec:
   params:
-   - name : BONFIRE_IMAGE
-     type: string
-     description: The container Bonfire image to use for the tekton tasks
-     default: quay.io/redhat-services-prod/hcm-eng-prod-tenant/cicd-tools:bb80105
-   - name: CUSTOM_IMAGE
-     type: string
-     description: The container image to use for the provisioning setup task
-     default: quay.io/envision/provisioning-cicd:latest
-   - name: NS
-     type: string
-     description: Namespace name to deploy the application to
-   - name: NS_REQUESTER
-     type: string
-     description: The name of the person/pipeline that requested the namespace
-   - name: EPHEMERAL_ENV_PROVIDER_SECRET
-     type: string
-     default: ephemeral-env-provider
-     description: "Secret for connecting to ephemeral env provider cluster"
-   - name: AWS_ACCOUNT_ID_SECRET
-     type: string
-     description: Secret containing the AWS Account ID
-     default: provisioning-aws-account-id
-   - name: AZURE_TENANT_ID_SECRET
-     type: string
-     description: Secret containing the AZURE Tenant ID
-     default: provisioning-azure-secrets
-   - name: AZURE_SUBSCRIPTION_ID_SECRET
-     type: string
-     description: Secret containing the AZURE Subscription ID
-     default: provisioning-azure-secrets
-   - name: AZURE_RESOURCE_GROUP_SECRET
-     type: string
-     description: Secret containing the AZURE Resource Group
-     default: provisioning-azure-secrets
+    - name : BONFIRE_IMAGE
+      type: string
+      description: The container Bonfire image to use for the tekton tasks
+      default: quay.io/redhat-services-prod/hcm-eng-prod-tenant/cicd-tools:bb80105
+    - name: CUSTOM_IMAGE
+      type: string
+      description: The container image to use for the provisioning setup task
+      default: quay.io/envision/provisioning-cicd:latest
+    - name: NS
+      type: string
+      description: Namespace name to deploy the application to
+    - name: NS_REQUESTER
+      type: string
+      description: The name of the person/pipeline that requested the namespace
+    - name: EPHEMERAL_ENV_PROVIDER_SECRET
+      type: string
+      default: ephemeral-env-provider
+      description: "Secret for connecting to ephemeral env provider cluster"
+    - name: AWS_ACCOUNT_ID_SECRET
+      type: string
+      description: Secret containing the AWS Account ID
+      default: provisioning-aws-account-id
+    - name: AZURE_TENANT_ID_SECRET
+      type: string
+      description: Secret containing the AZURE Tenant ID
+      default: provisioning-azure-secrets
+    - name: AZURE_SUBSCRIPTION_ID_SECRET
+      type: string
+      description: Secret containing the AZURE Subscription ID
+      default: provisioning-azure-secrets
+    - name: AZURE_RESOURCE_GROUP_SECRET
+      type: string
+      description: Secret containing the AZURE Resource Group
+      default: provisioning-azure-secrets
   results:
     - name: DYNACONF_ephemeral_images__aws__image_uuid
       description: ""
