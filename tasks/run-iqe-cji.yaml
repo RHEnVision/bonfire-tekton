@@ -83,38 +83,6 @@ spec:
       type: string
       description: "Tag of the IQE image to be used"
       default: ""
-    - name: DYNACONF_ephemeral_images__aws__image_uuid
-      type: string
-      description: Dynaconf config for provisioning plugin - AWS stubbed compose id
-      default: ""
-    - name: DYNACONF_ephemeral_images__aws__image_name
-      type: string
-      description: Dynaconf config for provisioning plugin - AWS stubbed image name
-      default: ""
-    - name: DYNACONF_ephemeral_images__gcp__image_uuid
-      type: string
-      description: Dynaconf config for provisioning plugin - GCP stubbed compose id
-      default: ""
-    - name: DYNACONF_ephemeral_images__gcp__image_name
-      type: string
-      description: Dynaconf config for provisioning plugin - GCP stubbed image name
-      default: ""
-    - name: DYNACONF_ephemeral_images__azure__image_uuid
-      type: string
-      description: Dynaconf config for provisioning plugin - Azure stubbed compose id
-      default: ""
-    - name: DYNACONF_ephemeral_images__azure__image_name
-      type: string
-      description: Dynaconf config for provisioning plugin - Azure stubbed image name
-      default: ""
-    - name: DYNACONF_ephemeral_images__aws_aarch__image_uuid
-      type: string
-      description: Dynaconf config for provisioning plugin - AWS aarch stubbed compose id
-      default: ""
-    - name: DYNACONF_ephemeral_images__aws_aarch__image_name
-      type: string
-      description: Dynaconf config for provisioning plugin - AWS aarch stubbed image name
-      default: ""
   steps:
     - name: deploy-iqe-cji
       image: "$(params.BONFIRE_IMAGE)"
@@ -165,22 +133,6 @@ spec:
           value: "true"
         - name: IQE_IMAGE_TAG
           value: $(params.IQE_IMAGE_TAG)
-        - name: DYNACONF_ephemeral_images__aws__image_uuid
-          value: $(params.DYNACONF_ephemeral_images__aws__image_uuid)
-        - name: DYNACONF_ephemeral_images__aws__image_name
-          value: $(params.DYNACONF_ephemeral_images__aws__image_name)
-        - name: DYNACONF_ephemeral_images__gcp__image_uuid
-          value: $(params.DYNACONF_ephemeral_images__gcp__image_uuid)
-        - name: DYNACONF_ephemeral_images__gcp__image_name
-          value: $(params.DYNACONF_ephemeral_images__gcp__image_name)
-        - name: DYNACONF_ephemeral_images__azure__image_uuid
-          value: $(params.DYNACONF_ephemeral_images__azure__image_uuid)
-        - name: DYNACONF_ephemeral_images__azure__image_name
-          value: $(params.DYNACONF_ephemeral_images__azure__image_name)
-        - name: DYNACONF_ephemeral_images__aws_aarch__image_uuid
-          value: $(params.DYNACONF_ephemeral_images__aws_aarch__image_uuid)
-        - name: DYNACONF_ephemeral_images__aws_aarch__image_name
-          value: $(params.DYNACONF_ephemeral_images__aws_aarch__image_name)
       script: |
         #!/bin/bash
         set -ex
