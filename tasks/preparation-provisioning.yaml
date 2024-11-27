@@ -39,21 +39,7 @@ spec:
       description: Secret containing the AZURE Resource Group
       default: provisioning-azure-secrets
   results:
-    - name: DYNACONF_ephemeral_images__aws__image_uuid
-      description: ""
-    - name: DYNACONF_ephemeral_images__aws__image_name
-      description: ""
-    - name: DYNACONF_ephemeral_images__aws_aarch__image_uuid
-      description: ""
-    - name: DYNACONF_ephemeral_images__aws_aarch__image_name
-      description: ""
-    - name: DYNACONF_ephemeral_images__gcp__image_uuid
-      description: ""
-    - name: DYNACONF_ephemeral_images__gcp__image_name
-      description: ""
-    - name: DYNACONF_ephemeral_images__azure__image_uuid
-      description: ""
-    - name: DYNACONF_ephemeral_images__azure__image_name
+    - name: iqe-additional-env-vars
       description: ""
   steps:
     - name: provisioning-setup
@@ -114,18 +100,5 @@ spec:
 
         source /images_db_stub.sh 
 
-        echo "Storing AWS image details"
-        echo -n "$DYNACONF_ephemeral_images__aws__image_uuid" > $(results.DYNACONF_ephemeral_images__aws__image_uuid.path)
-        echo -n "$DYNACONF_ephemeral_images__aws__image_name" > $(results.DYNACONF_ephemeral_images__aws__image_name.path)
-
-        echo "Storing AWS aarch image details"
-        echo -n "$DYNACONF_ephemeral_images__aws_aarch__image_uuid" > $(results.DYNACONF_ephemeral_images__aws_aarch__image_uuid.path)
-        echo -n "$DYNACONF_ephemeral_images__aws_aarch__image_name" > $(results.DYNACONF_ephemeral_images__aws_aarch__image_name.path)
-
-        echo "Storing GCP image details"
-        echo -n "$DYNACONF_ephemeral_images__gcp__image_uuid" > $(results.DYNACONF_ephemeral_images__gcp__image_uuid.path)
-        echo -n "$DYNACONF_ephemeral_images__gcp__image_name" > $(results.DYNACONF_ephemeral_images__gcp__image_name.path)
-
-        echo "Storing Azure image details"
-        echo -n "$DYNACONF_ephemeral_images__azure__image_uuid" > $(results.DYNACONF_ephemeral_images__azure__image_uuid.path)
-        echo -n "$DYNACONF_ephemeral_images__azure__image_name" > $(results.DYNACONF_ephemeral_images__azure__image_name.path)
+        echo "Storing iqe variables to results"
+        echo -n "$IQE_ENV_VARS" > $(results.iqe-additional-env-vars.path)
