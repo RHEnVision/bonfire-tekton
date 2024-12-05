@@ -8,3 +8,6 @@ spec:
       image: ubuntu
       command: [echo]
       args: ["No preparation step needed"]
+  results:
+    - name: iqe-additional-env-vars
+      description: ""
