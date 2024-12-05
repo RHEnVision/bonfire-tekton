@@ -3,11 +3,14 @@ kind: Task
 metadata:
   name: noop
 spec:
-  steps:
-    - name: noop-preparation
-      image: ubuntu
-      command: [echo]
-      args: ["No preparation step needed"]
   results:
     - name: iqe-additional-env-vars
       description: ""
+  steps:
+    - name: noop-preparation
+      image: ubuntu
+      script: |
+        #!/bin/bash
+        echo "Noop - skipping - no preparation needed"
+
+        echo -n "" > $(results.iqe-additional-env-vars.path)
