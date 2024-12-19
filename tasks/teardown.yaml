@@ -86,6 +86,9 @@ spec:
         #!/bin/bash
         set -ex
 
+        # Workaround, this should be done in the container itself
+        chmod +x ./konflux/upload-to-s3.sh
+
         echo "Copying files to S3"
         upload-to-s3.sh | tee "$(results.ARTIFACTS_URL.path)"
 
