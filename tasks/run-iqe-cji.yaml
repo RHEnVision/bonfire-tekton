@@ -139,7 +139,7 @@ spec:
           value: "true"
         - name: IQE_IMAGE_TAG
           value: $(params.IQE_IMAGE_TAG)
-      computeResources:
+      resources:
         requests:
           memory: 2Gi
           cpu: 500m
