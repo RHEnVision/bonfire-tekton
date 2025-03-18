@@ -139,6 +139,13 @@ spec:
           value: "true"
         - name: IQE_IMAGE_TAG
           value: $(params.IQE_IMAGE_TAG)
+      computeResources:
+        requests:
+          memory: 2Gi
+          cpu: 500m
+        limits:
+          memory: 3Gi
+          cpu: 800m
       script: |
         #!/bin/bash
         set -ex
@@ -152,10 +159,4 @@ spec:
 
         echo "Deploying the IQE CJI test"
         deploy-iqe-cji.sh "$(params.NS)" "$(params.NS_REQUESTER)"
-      computeResources:
-        requests:
-          memory: 2Gi
-          cpu: 500m
-        limits:
-          memory: 3Gi
-          cpu: 800m
+
