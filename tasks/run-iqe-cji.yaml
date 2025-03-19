@@ -144,8 +144,8 @@ spec:
           memory: 3Gi
           cpu: 1
         limits:
-          memory: 4Gi
-          cpu: 2
+          memory: 6Gi
+          cpu: 4
       script: |
         #!/bin/bash
         set -ex
